@@ -1,8 +1,6 @@
 # Sentiment Analysis
 
-  Scratch approach:
-
-  Aim of the model is to find whether a tweet referred as a postive sentiment or negative sentiment using Navie Bayes.
+ Aim of the model is to find whether a tweet referred as a postive sentiment or negative sentiment using Navie Bayes.
   The naive bayes classfier is one of the simple probabilistic classifier used for processing text. we implemeted two methodds for naive bayes from scratch.
 
 1.sentiment_analysis (slightly modified approach)
@@ -25,17 +23,13 @@
     Calculated positive and negative sentiment scores for each tweet by combining individual word probabilities, then assigned the sentiment corresponding to the higher score.
     
 # 2.Navie bayes standard approach
- we have done pre processing only for the trianing data set 
-    we have removed numbers from the data set, extra special characters.  we also trimmed exrtra white spaces. since it is not any known languages we cannot able reduce the stop word. we also tried clipping but ti deos decrease the accuracy so we avoided.
-    
-   Fitting the model
-   i will find the total number of uniques tokens in the whole coropus 
-   we first segeregate postive tweets and negative tweets, and then i will find the tolal number of words in the positive corpus and negative corpus. i will throw all the psotive words in one bag and negative words in bad along with their frequency
-   logprior = np.log(d_pos) - np.log(d_neg)
-   Both are almost the ssame the only differece is , here at the end i will predict if my predicted score is greate than logprior value i will conclude it as psotive or else negative,  
-   In the standard approach we used log probabilities to avoid underflow values.
-   
-   accuracy on the test_set: 0.781
+- Data Preprocessing: Preprocessed only the training dataset by removing numbers and unnecessary special characters and trimming extra whitespace. Standard stop-word removal was not feasible because the language was not well-resourced. Clipping was also tested but excluded because it reduced model accuracy.
+
+- Model Training: Built a vocabulary of unique tokens and separated the tweets into positive and negative classes. Calculated word frequencies for each class and computed the log prior using \(\log(d_{pos}) - \log(d_{neg})\) to account for class distribution.
+
+- Sentiment Prediction: Calculated sentiment scores using log probabilities to prevent numerical underflow and compared the predicted score against the log-prior threshold to classify each tweet as positive or negative.
+
+- Test Accuracy: Achieved 78.1% accuracy on the test dataset.
    
 # Anything Goes Approach
 
