@@ -2,27 +2,27 @@
 
   Scratch approach:
 
-  Aim of the model is to find whether a tweet referred as a postive sentiment or negative sentiment using Navie Bayes
+  Aim of the model is to find whether a tweet referred as a postive sentiment or negative sentiment using Navie Bayes.
   The naive bayes classfier is one of the simple probabilistic classifier used for processing text. we implemeted two methodds for naive bayes from scratch.
 
 1.sentiment_analysis (slightly modified approach)
 2.naive_bayes a standard approach
    
-# 1.sentiment analysis(slightly modified approach
-   pre-Prcoessing
-    we have done pre processing only for the trianing data set 
-    we have removed numbers from the data set, extra special characters.  we also trimmed exrtra white spaces. since it is not any known languages we cannot able reduce the stop word. we also tried clipping but ti deos decrease the accuracy so we avoided.
+# 1.sentiment analysis(slightly modified approach)
+   Pre-Prcoessing
+    Performed pre processing only for the training data set. 
+    - removed numbers from the data set
+    - extra special characters
+    - trimmed exrtra white spaces
+  Since the language was not well-resourced, standard stop-word removal was not feasible. We also experimented with clipping but excluded it because it reduced model accuracy.
     
-   Fitting the model
-   i will find the total number of uniques tokens in the whole coropus 
-   we first segeregate postive tweets and negative tweets, and then i will find the tolal number of words in the positive corpus and negative corpus. i will throw all the psotive words in one bag and negative words in bad along with their frequency.
+   Model Training
+   Calculated the vocabulary of unique tokens across the corpus, separated tweets into positive and negative classes, and computed word frequencies for each class.
    
-   accuracy on the test_set: 0.5991
+   Accuracy on the test_set: 0.5991
  
-  To predict
-    i will loop through all the words in the sentence and i will find two score for every word and multiply all the indicidual probability
-    A the end of the predict fucntion i will be left with two socre for a single tweet.
-    each tweet will have probability of sentence to be positive and porbability of sentence to be nagative . i will find the maximum of two and will predict.
+  Model Prediction
+    Calculated positive and negative sentiment scores for each tweet by combining individual word probabilities, then assigned the sentiment corresponding to the higher score.
     
 # 2.Navie bayes standard approach
  we have done pre processing only for the trianing data set 
